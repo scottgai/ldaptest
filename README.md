@@ -68,7 +68,7 @@ ldap-user: cn=bind,ou=Users,dc=example,dc=com
 ldap-passwd: abcd$1234
 ldap-basedn: ou=users,dc=example,dc=com
 ldap-proto: tcp
-ldap-timeout: 120000000000
+ldap-timeout: 120 seconds
 skip-ssl-validation: false
 LDAP user to query:  James Smith
 -----------------------------------------
@@ -103,7 +103,7 @@ ldap-user: cn=bind,ou=Users,dc=example,dc=com
 ldap-passwd: abcde$1234
 ldap-basedn: ou=users,dc=example,dc=com
 ldap-proto: tcp
-ldap-timeout: 180000000000
+ldap-timeout: 180 seconds
 skip-ssl-validation: true
 LDAP user to query:  James Smith
 -----------------------------------------
