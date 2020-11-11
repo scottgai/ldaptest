@@ -42,7 +42,7 @@ func main() {
 	flag.StringVar(&ldapCACert, "cacert", "", "CA cert file used to authenticate LDAP server")
 	flag.StringVar(&ldapProto, "protocol", "tcp", "protocol used to connect to LDAP server, tcp/udp")
 	flag.StringVar(&ldapSvcUser, "user", "", "username to authenticate LDAP server")
-	flag.StringVar(&ldapSvcPass, "pass", "", "password to authenticate LDAP server")
+	flag.StringVar(&ldapSvcPass, "pass", "", "password to authenticate LDAP server. Use '\\$' if '$'  is present")
 	flag.StringVar(&userName, "ldapuser", "", "LDAP user to be queried")
 	flag.BoolVar(&skipSslValdation, "skip_ssl_validation", false, "Skip SSL validation")
 	flag.BoolVar(&env, "env", false, `Read parameters from environment variables instead of commaond line arguments. Enviroment variables:
@@ -50,7 +50,7 @@ func main() {
     LDAP_PORT - LDAP port to connect to
     LDAP_BASEDN - LDAP Base DN to search
     LDAP_SVC_USER - username to authenticate LDAP server
-    LDAP_SVC_PASS - password to authenticate LDAP server
+    LDAP_SVC_PASS - password to authenticate LDAP server. Use '\$' if '$'  is present
     LDAP_CACERT - CA cert file used to authenticate LDAP server
     LDAP_PROTO - protocol used to connect to LDAP server, tcp/udp
     SKIP_SSL_VALIDATION - skip SSL validation
@@ -136,7 +136,7 @@ func main() {
 	fmt.Printf("ldap-host: %s\nldap-port: %d\nldap-cacert: %s\n", ldapHost, ldapPort, ldapCACert)
 	fmt.Printf("ldap-user: %s\nldap-passwd: %s\n", ldapSvcUser, ldapSvcPass)
 	fmt.Printf("ldap-basedn: %s\nldap-proto: %s\n", ldapBaseDn, ldapProto)
-	fmt.Printf("ldap-timeout: %d\nskip-ssl-validation: %s\n", ldapTimeout, strconv.FormatBool(skipSslValdation))
+	fmt.Printf("ldap-timeout: %d seconds\nskip-ssl-validation: %s\n", int(ldapTimeout.Seconds()), strconv.FormatBool(skipSslValdation))
 	fmt.Println("LDAP user to query: ", userName)
 	fmt.Println("-----------------------------------------")
 
