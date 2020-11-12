@@ -75,12 +75,12 @@ LDAP user to query:  James Smith
 Loaded CA certificate from file: ./ldap-ca.cert
 DIAL successfully
 BIND successfully
-Found 1 entries for user Sandra Walls
+Found 1 entries for user James Smith
     DN: cn=James Smith,ou=Users,dc=example,dc=com
       givenName: [James]
       sn: [Smith]
       cn: [James Smith]
-      uid: [swalls]
+      uid: [jsmith]
       uidNumber: [2001]
       gidNumber: [101]
       homeDirectory: [/home/users/jsmith]
@@ -110,12 +110,12 @@ LDAP user to query:  James Smith
 Loaded CA certificate from file: ./lab-ca.cert
 DIAL successfully
 BIND successfully
-Found 1 entries for user Sandra Walls
+Found 1 entries for user James Smith
     DN: cn=James Smith,ou=Users,dc=example,dc=com
       givenName: [James]
       sn: [Smith]
       cn: [James Smith]
-      uid: [swalls]
+      uid: [jsmith]
       uidNumber: [2001]
       gidNumber: [101]
       homeDirectory: [/home/users/jsmith]
